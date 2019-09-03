@@ -6,7 +6,7 @@ import pandas as pd
 def my_submission(test_file, out_file):
     df = pd.read_csv(test_file)
 
-    with open(Path('src/trained_model'), 'rb') as trained_model_file:
+    with open(Path('trained_model'), 'rb') as trained_model_file:
         trained_model = pickle.load(trained_model_file)
 
     results = trained_model.predict(df)
