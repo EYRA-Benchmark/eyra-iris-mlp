@@ -10,7 +10,7 @@ def my_submission(test_file, out_file):
         trained_model = pickle.load(trained_model_file)
 
     results = trained_model.predict(df)
-    pd.DataFrame(results).to_csv(out_file, header=False, index=False)
+    pd.DataFrame(results).rename(columns={0: 'class'}).to_csv(out_file, header=True, index=False)
 
 
 if __name__ == "__main__":
